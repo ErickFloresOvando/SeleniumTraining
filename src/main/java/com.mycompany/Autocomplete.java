@@ -29,7 +29,7 @@ public class Autocomplete {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //Explicit wait
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement autocompleteResult = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("pac-item")));
 
         //Click on result
