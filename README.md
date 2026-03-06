@@ -5,7 +5,7 @@
 This repository contains automated test scripts and exercises developed during the Selenium Essential Training.
 The project focuses on mastering the fundamentals of Selenium WebDriver using Java, following industry best practices for test automation.
 
-##🚀 **Technologies & Tools**
+## 🚀 **Technologies & Tools**
 
 - Language: Java 17 (Temurin)
 
@@ -19,8 +19,8 @@ The project focuses on mastering the fundamentals of Selenium WebDriver using Ja
 
 - IDE: IntelliJ IDEA
 
-##🛠️ Project Setup
-Prerequisites
+## 🛠️ Project Setup
+# Prerequisites
 
 - Java JDK 17 installed.
 
