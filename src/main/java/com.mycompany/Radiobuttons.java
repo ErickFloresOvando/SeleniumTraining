@@ -1,18 +1,28 @@
 package com.mycompany;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class Radiobuttons {
-    public static void main(String[] args) {
-        //Open google chrome browser
-        System.setProperty("webdriver.chrome.driver", "/Users/erickfloresovando/Downloads/chromedriver-mac-arm64/chromedriver");
-        ChromeDriver driver = new ChromeDriver();
+    protected static WebDriver driver;
 
-        //Maximize window
+    @BeforeClass
+    public void setUp(){
+        //Open browser
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+    }
 
+    @Test
+    public void RadiobuttonsTest() {
         //Open application
         driver.get("https://formy-project.herokuapp.com/radiobutton");
 
@@ -25,9 +35,10 @@ public class Radiobuttons {
 
         WebElement radioButton3 = driver.findElement(By.xpath("/html/body/div/div[3]/input"));
         radioButton3.click();
+    }
 
-        //Quit
+    @AfterClass
+    public void tearDown(){
         driver.quit();
-
     }
 }

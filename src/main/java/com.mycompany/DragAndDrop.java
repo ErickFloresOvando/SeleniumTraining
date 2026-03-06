@@ -1,19 +1,30 @@
 package com.mycompany;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class DragAndDrop {
-    public static void main(String[] args) throws InterruptedException {
-        //Open google chrome browser
-        System.setProperty("webdriver.chrome.driver", "/Users/erickfloresovando/Downloads/chromedriver-mac-arm64/chromedriver");
-        ChromeDriver driver = new ChromeDriver();
+    //Atributes
+    protected static WebDriver driver;
 
-        //Maximize window
+    @BeforeClass
+    public void setUp(){
+        //Open browser
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+    }
 
+    @Test
+    public void DragAndDropTest() throws InterruptedException {
         //Open application
         driver.get("https://formy-project.herokuapp.com/dragdrop");
 
@@ -23,11 +34,12 @@ public class DragAndDrop {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(image, box).build().perform();
 
-        Thread.sleep(5000);
-
-        //Quit
-        //driver.quit();
-
+        Thread.sleep(3000);
+    }
+    //Quit
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
     }
 
 }

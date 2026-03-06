@@ -1,20 +1,29 @@
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import pages.ConfirmationPage;
 import pages.FormPage;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.AssertJUnit.assertEquals;
 
 
 public class Form {
-    public static void main(String[] args) {
-        //Open google chrome browser
-        System.setProperty("webdriver.chrome.driver", "/Users/erickfloresovando/Downloads/chromedriver-mac-arm64/chromedriver");
-        ChromeDriver driver = new ChromeDriver();
+    protected static WebDriver driver;
 
-        //Maximize window
+    @BeforeClass
+    public void setUp(){
+        //Open browser
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
         driver.manage().window().maximize();
+    }
 
+    @Test
+    public void FormTest(){
         //Open application
         driver.get("https://formy-project.herokuapp.com/form");
 
@@ -25,7 +34,11 @@ public class Form {
         confirmationPage.waitForAlertBanner(driver);
         assertEquals("The form was successfully submitted!", confirmationPage.getAlertBannerText(driver));
 
-        //Quit
+    }
+
+    //Quit
+    @AfterClass
+    public void tearDown(){
         driver.quit();
     }
 
