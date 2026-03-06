@@ -1,4 +1,4 @@
-#Selenium Essential Training
+###Selenium Essential Training
 
 This repository contains automated test scripts and exercises developed during the Selenium Essential Training.
 The project focuses on mastering the fundamentals of Selenium WebDriver using Java, following industry best practices for test automation.
