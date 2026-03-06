@@ -6,23 +6,24 @@ This repository contains automated test scripts and exercises developed during t
 The project focuses on mastering the fundamentals of Selenium WebDriver using Java, following industry best practices for test automation.
 
 🚀 **Technologies & Tools**
-Language: Java 17 (Temurin)
 
-Test Framework: TestNG
+- Language: Java 17 (Temurin)
 
-Automation Library: Selenium WebDriver v4.38.0
+- Test Framework: TestNG
 
-Driver Management: WebDriverManager
+- Automation Library: Selenium WebDriver v4.38.0
 
-Build Tool: Maven
+- Driver Management: WebDriverManager
 
-IDE: IntelliJ IDEA
+- Build Tool: Maven
+
+- IDE: IntelliJ IDEA
 
 🛠️ **Project Setup**
-Prerequisites
+# Prerequisites
 
-Java JDK 17 installed.
+- Java JDK 17 installed.
 
-Maven installed and configured in your system path.
+- Maven installed and configured in your system path.
 
-Google Chrome browser updated to the latest version.
+- Google Chrome browser updated to the latest version.
