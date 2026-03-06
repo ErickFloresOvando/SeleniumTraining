@@ -20,7 +20,7 @@ The project focuses on mastering the fundamentals of Selenium WebDriver using Ja
 - IDE: IntelliJ IDEA
 
 ## 🛠️ Project Setup
- Prerequisites
+ Prerequisites:
 
 - Java JDK 17 installed.
 
